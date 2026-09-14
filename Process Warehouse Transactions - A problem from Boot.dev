@@ -1,0 +1,109 @@
+Problem:
+**Process Warehouse Transactions**
+*Complete the process_transactions function.*
+
+It accepts:
+
+    inventory: a dictionary mapping item names to current stock
+    transactions: a list of transaction dictionaries
+
+Each transaction must contain:
+
+    "action": either "receive" or "sell"
+    "item": a string naming an existing inventory item
+    "quantity": a positive integer (True and False are not valid quantities)
+
+Apply the transactions in order to a copy of the inventory and return the updated copy.
+
+    "receive" adds stock
+    "sell" removes stock
+
+Raise:
+
+    TypeError if a transaction is not a dictionary, required fields are missing, action or item is not a string, or quantity is not an integer
+    ValueError if the action is unsupported, the quantity is not positive, or a sale would make stock negative
+    KeyError if the item is not in the inventory
+
+Neither input may be modified, even when an exception is raised.
+
+Example:
+inventory = {"bolts": 12, "paint": 5}
+transactions = [
+    {"action": "sell", "item": "bolts", "quantity": 4},
+    {"action": "receive", "item": "paint", "quantity": 3},
+]
+print(process_transactions(inventory, transactions))
+# {"bolts": 8, "paint": 8}
+
+
+Solution:
+def process_transactions(
+    inventory: dict[str, int], transactions: list[dict[str, object]]
+) -> dict[str, int]:
+    updated_inventory = inventory.copy()
+    
+    #Run checks Type -> Key -> Value
+    for transaction in transactions:
+        #Is the values in the correct type?
+        check_transaction_type(transaction)
+        
+        #Does the item exist in inventory? 
+        check_transaction_key(updated_inventory, transaction)
+        
+        #Is the value valid?
+        check_transaction_value(updated_inventory, transaction)
+        if transaction["action"] == "sell":
+            updated_inventory[transaction["item"]] -= transaction["quantity"]
+        elif transaction["action"] == "receive":
+            updated_inventory[transaction["item"]] += transaction["quantity"]
+
+    return updated_inventory
+
+
+def check_transaction_type(transaction: dict[str, object]):
+    required_fields = ["action", "item", "quantity"]
+
+    #Ensure transaction is a dictionary
+    if not isinstance(transaction, dict):
+        raise TypeError
+
+
+    #Ensure required fields are in transaction
+    for required_field in required_fields:
+        if required_field not in transaction:
+            raise TypeError
+
+
+    #Ensure the fields are in the correct type
+    if not (
+        isinstance(transaction["action"], str) 
+        and isinstance(transaction["item"], str)
+        and isinstance(transaction["quantity"], int)
+        and not isinstance(transaction["quantity"], bool)
+    ):
+        raise TypeError
+
+
+def check_transaction_key(inventory: dict[str, int], transaction: dict[str, object]):
+    #Ensure that item exist in inventory
+    if transaction["item"] not in inventory:
+        raise KeyError
+
+
+def check_transaction_value(inventory: dict[str, int], transaction: dict[str, object]):
+    #Ensure "action"'s value is either receive or sell
+    if transaction["action"] not in ["receive", "sell"]:
+        raise ValueError
+
+
+    #Ensure that quantity is a positive
+    if transaction["quantity"] <= 0:
+        raise ValueError
+
+
+    #Ensure that when sell, stock is sufficient to sell
+    if transaction["action"] == "sell":
+        update_stock = inventory[transaction["item"]] - transaction["quantity"]
+        if update_stock < 0:
+            raise ValueError
+
