@@ -2,3 +2,4 @@
 [![Boot.dev Learn Linux certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/e0508da7-f468-46b8-bedf-d643cad4836b.jpeg?v=1789356846)](https://www.boot.dev/certificates/e0508da7-f468-46b8-bedf-d643cad4836b)
 [![Boot.dev Build a BookBot in Python certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/ab790800-c19a-437a-b1ca-b63f5d3ca9dc.jpeg?v=1789403191)](https://www.boot.dev/certificates/ab790800-c19a-437a-b1ca-b63f5d3ca9dc)
 [![Boot.dev Learn Git certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/5918fa8c-1b0e-445b-8a0b-97d6d0b7baea.jpeg?v=1789567964)](https://www.boot.dev/certificates/5918fa8c-1b0e-445b-8a0b-97d6d0b7baea)
+[![Boot.dev Learn SQL certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/467c08ca-6361-45f9-ae6a-28c3af3ce33e.jpeg?v=1789890044)](https://www.boot.dev/certificates/467c08ca-6361-45f9-ae6a-28c3af3ce33e)
