@@ -11,3 +11,4 @@
 [![Boot.dev Build a Web Scraper in Python certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/43ad4563-a309-48e3-aaee-bb1f72f0df5c.jpeg?v=1792235648)](https://www.boot.dev/certificates/43ad4563-a309-48e3-aaee-bb1f72f0df5c)
 [![Boot.dev Learn Pandas certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/6f217d72-298b-4aae-b851-f30c8fe797ff.jpeg?v=1793200331)](https://www.boot.dev/certificates/6f217d72-298b-4aae-b851-f30c8fe797ff)
 [![Boot.dev Learn Power BI certificate](https://qvault-webapp-dynamic-assets.storage.googleapis.com/certificates/2b0773e1-6a09-46ee-8d41-310f390093fa.jpeg?v=1793587154)](https://www.boot.dev/certificates/2b0773e1-6a09-46ee-8d41-310f390093fa)
+[![Boot.dev Learn Retrieval Augmented Generation certificate](https://api.boot.dev/v1/static/certificate/4140e265-5c5f-443d-870d-8889a7aec46b)](https://www.boot.dev/certificates/4140e265-5c5f-443d-870d-8889a7aec46b)
